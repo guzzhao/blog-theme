@@ -3,13 +3,6 @@ import { defineConfig } from 'vitepress'
 import UnoCSS from 'unocss/vite'
 import Icons from 'unplugin-icons/vite'
 
-import {
-  presetAttributify,
-  presetIcons,
-  presetUno,
-  transformerDirectives,
-} from 'unocss'
-
 const logo = '/logo.svg'
 
 export default defineConfig({
@@ -77,7 +70,7 @@ export default defineConfig({
         {
           find: /^.*\/VPNavBarAppearance\.vue$/,
           replacement: fileURLToPath(
-            new URL('./theme/components/SwitchDark.vue', import.meta.url),
+            new URL('./theme/components/module/SwitchDark.vue', import.meta.url),
           ),
         },
       ],

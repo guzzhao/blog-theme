@@ -9,8 +9,6 @@ import FluentEmojiFlatFirstQuarterMoonFace from '~icons/fluent-emoji-flat/first-
 const mouseover = ref(false)
 const { isDark } = useData()
 
-
-
 function switchDark() {
   isDark.value = !isDark.value
 }
@@ -51,7 +49,6 @@ function switchDark() {
   /*rtl:ignore*/
   transform: translateX(18px);
 }
-
 
 #main {
   display: flex;

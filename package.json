@@ -6,15 +6,20 @@
   "scripts": {
     "dev": "vitepress",
     "build": "vitepress build",
-    "serve": "vitepress serve"
+    "serve": "vitepress serve",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@vueuse/core": "^10.6.1"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.43.1",
-    "@iconify/json": "^2.2.118",
-    "@unocss/eslint-config": "^0.56.2",
-    "eslint": "^8.49.0",
+    "@antfu/eslint-config": "2.1.0",
+    "@iconify/json": "^2.2.145",
+    "@unocss/eslint-config": "^0.57.7",
+    "eslint": "^8.54.0",
     "unocss": "^0.55.7",
-    "unplugin-icons": "^0.17.0",
-    "vitepress": "1.0.0-rc.13"
+    "unplugin-icons": "^0.17.4",
+    "vitepress": "1.0.0-rc.29"
   }
+
 }

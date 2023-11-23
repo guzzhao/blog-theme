@@ -1,11 +1,13 @@
 @import url("https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.6.0/style.min.css");
 
 :root {
+
+  --vp-nav-height: 50px;
   --vp-c-brand: #a27b5c;
-  --vp-c-brand-light: #a27b5c;
+  --vp-c-brand-light: #b9997e;
   --vp-c-brand-dark: #a27b5c;
   --vp-c-hover: #212121;
-  --vp-c-bg: #faf6f1;
+  --vp-c-bg: #fafafa;
   --vp-c-bg-alpha-with-backdrop: rgba(250, 246, 241, 0.7);
 
   --vp-c-color-b: #26ccff;
@@ -20,6 +22,8 @@
     "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
     monospace;
   --vp-avator-border: #ffffff;
+
+  --center-bg: white;
 }
 
 .dark {
@@ -28,22 +32,16 @@
   --vp-c-hover: #ffffff;
   --vp-c-bg-alpha-with-backdrop: rgba(44, 54, 57, 0.7);
   --vp-avator-border: #3f4e4f;
+
+  --center-bg: #797980;
+
 }
 
-#app {
-  min-height: 100vh;
-  position: relative;
-}
 
-.theme {
-  background-color: var(--vp-c-bg);
-}
 
-.vp-doc h2 {
-  margin-top: 0;
-  border-top: none;
-}
 
-.VPDocOutlineDropdown {
-  display: none !important;
+
+.VPNavBarSearch {
+  opacity: 0.5;
+  
 }

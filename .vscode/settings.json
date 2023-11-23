@@ -27,9 +27,8 @@
   "editor.stickyScroll.enabled": false,
   "editor.hover.sticky": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll": false,
-    "source.fixAll.eslint": true, // this allows ESLint to auto fix on save
-    "source.organizeImports": false
+    "source.fixAll.eslint": "explicit", // this allows ESLint to auto fix on save
+    "source.organizeImports": "never"
   },
   "editor.wordSeparators": "`~!@#%^&*()=+[{]}\\|;:'\",.<>/?",
   "explorer.confirmDelete": false,
@@ -78,6 +77,20 @@
     "**/tmp": true,
     "**/yarn.lock": true
   },
+  "eslint.experimental.useFlatConfig": true,
+  "prettier.enable": false,
+  "eslint.rules.customizations": [
+    { "rule": "style/*", "severity": "off" },
+    { "rule": "*-indent", "severity": "off" },
+    { "rule": "*-spacing", "severity": "off" },
+    { "rule": "*-spaces", "severity": "off" },
+    { "rule": "*-order", "severity": "off" },
+    { "rule": "*-dangle", "severity": "off" },
+    { "rule": "*-newline", "severity": "off" },
+    { "rule": "*quotes", "severity": "off" },
+    { "rule": "*semi", "severity": "off" }
+  ],
+
   "eslint.validate": [
     "javascript",
     "javascriptreact",
@@ -96,6 +109,7 @@
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "package.json": ".*,netlify*,pnpm*,yarn*,npm*,uno*,vercel*, tsconfig.*"
-  }
+    "package.json": ".*,netlify*,pnpm*,yarn*,npm*,uno*,vercel*, tsconfig.*,eslint*"
+  },
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

@@ -72,7 +72,7 @@ This is a details block.
 
 ```js
 export default {
-  name: 'MyComponent', 
+  name: 'MyComponent',
   // ...
 }
 ```

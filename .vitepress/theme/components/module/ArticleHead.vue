@@ -1,5 +1,6 @@
 <script setup>
 import { useData } from 'vitepress'
+import DateShow from './DateShow.vue'
 
 const { frontmatter } = useData()
 </script>
