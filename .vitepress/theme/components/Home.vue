@@ -73,6 +73,8 @@ const routerPage = url => router.go(url)
   justify-content: space-around;
   align-items: center;
   background-color: var(--center-bg);
+  border-radius: var(--center-radius)
+
 }
 
 #head {
@@ -88,6 +90,8 @@ const routerPage = url => router.go(url)
   min-height: 2vh;
   display: flex;
   justify-content: center;
+  background-color: var(--center-bg);
+
 }
 
 #tags {

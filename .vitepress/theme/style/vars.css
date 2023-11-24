@@ -7,41 +7,50 @@
   --vp-c-brand-light: #b9997e;
   --vp-c-brand-dark: #a27b5c;
   --vp-c-hover: #212121;
-  --vp-c-bg: #fafafa;
   --vp-c-bg-alpha-with-backdrop: rgba(250, 246, 241, 0.7);
-
+  
   --vp-c-color-b: #26ccff;
   --vp-c-color-c: #0cb9ed;
   --vp-c-color-d: #a15000;
   --vp-c-color-e: #ed7c0c;
-
+  
   --vp-font-family-base: "LXGW WenKai Lite", "Inter var experimental",
-    "Inter var", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  "Inter var", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+  Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   --vp-font-family-mono: "LXGW WenKai Mono Lite", ui-monospace, SFMono-Regular,
-    "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
-    monospace;
+  "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+  monospace;
   --vp-avator-border: #ffffff;
-
-  --center-bg: white;
+  
+  --vp-c-bg: #f1f5f9;
+  --center-bg: #ffffff;
+  --center-radius: 0.25rem
 }
 
 .dark {
-  --vp-c-bg: #2c3639;
   --vp-c-text: white;
   --vp-c-hover: #ffffff;
   --vp-c-bg-alpha-with-backdrop: rgba(44, 54, 57, 0.7);
   --vp-avator-border: #3f4e4f;
-
-  --center-bg: #797980;
+  
+  --vp-c-bg: #1d2025;
+  --center-bg: #26282c;
 
 }
 
+.VPNavBar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+}
 
-
-
-
-.VPNavBarSearch {
-  opacity: 0.5;
-  
+.VPDoc > div{
+  max-width: 80%;
+  background-color: var(--center-bg);
+  padding-top: 30px;
+  border-radius: var(--center-radius)
 }

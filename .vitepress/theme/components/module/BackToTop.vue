@@ -1,6 +1,6 @@
 <script setup>
 import { ref, watch, watchEffect } from 'vue'
-import { useWindowScroll } from '@vueuse/core'
+import { useCssVar, useWindowScroll } from '@vueuse/core'
 import GameIconsTopPaw from '~icons/game-icons/top-paw'
 
 const { x, y } = useWindowScroll({ behavior: 'smooth' })
@@ -8,10 +8,15 @@ const { x, y } = useWindowScroll({ behavior: 'smooth' })
 function goTop() {
   y.value = 0
 }
+const navHeight = useCssVar('--vp-nav-height')
 
 const isActive = ref(false)
 
-watch(y, () => {
+watch(y, (oldValue, newValue) => {
+  if (y > 0) {
+    console.log('aa')
+  }
+
   isActive.value = y.value > 300
 })
 </script>
@@ -26,10 +31,10 @@ watch(y, () => {
 
 <style scoped>
 .backToTop {
- position: fixed;
- bottom: 25px;
- right: 20px;
- cursor: pointer
+  position: fixed;
+  bottom: 25px;
+  right: 20px;
+  cursor: pointer
 }
 
 .slide-fade-enter-active {
