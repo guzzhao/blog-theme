@@ -1,5 +1,4 @@
 <script setup>
-import { computed } from 'vue'
 import { getDate } from '../../utils.js'
 
 const props = defineProps(['date'])

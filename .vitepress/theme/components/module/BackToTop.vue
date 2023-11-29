@@ -1,6 +1,4 @@
 <script setup>
-import { ref, watch, watchEffect } from 'vue'
-import { useCssVar, useWindowScroll } from '@vueuse/core'
 import GameIconsTopPaw from '~icons/game-icons/top-paw'
 
 const { x, y } = useWindowScroll({ behavior: 'smooth' })

@@ -8,6 +8,7 @@ interface Post {
     string: string
   }
   excerpt: string | undefined
+  tag: string
 }
 
 declare const data: Post[]
@@ -23,7 +24,7 @@ export default createContentLoader('posts/*.md', {
         excerpt,
         date: formatDate(frontmatter.date),
         frontmatter,
-        tag:frontmatter.tag || '😃',
+        tag: frontmatter.tag || '😃',
       }))
       .sort((a, b) => b.date.time - a.date.time)
   },

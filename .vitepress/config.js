@@ -1,7 +1,4 @@
-import { URL, fileURLToPath } from 'node:url'
 import { defineConfig } from 'vitepress'
-import UnoCSS from 'unocss/vite'
-import Icons from 'unplugin-icons/vite'
 
 const logo = '/logo.svg'
 
@@ -18,6 +15,7 @@ export default defineConfig({
       },
     },
   },
+  lastUpdated: true,
   head: [
     [
       'link',
@@ -46,38 +44,15 @@ export default defineConfig({
     logo,
     aside: false,
     search: null,
-    // nav: [
-    //   {
-    //     text: "🏡Blogs",
-    //     link: "/",
-    //   },
-    //   {
-    //     text: "🔖Tags",
-    //     link: "pages/tags",
-    //   },
-    // ],
-    // socialLinks: [
-    //   { icon: "github", link: "https://github.com" },
-    // ],
-
-  },
-  vite: {
-    optimizeDeps: {
-      exclude: ['vitepress'],
-    },
-    resolve: {
-      alias: [
-        {
-          find: /^.*\/VPNavBarAppearance\.vue$/,
-          replacement: fileURLToPath(
-            new URL('./theme/components/module/SwitchDark.vue', import.meta.url),
-          ),
-        },
-      ],
-    },
-    plugins: [
-      UnoCSS(),
-      Icons({ /* options */ }),
+    nav: [
+      {
+        text: 'about',
+        link: '/about',
+      },
     ],
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com' },
+    ],
+
   },
 })

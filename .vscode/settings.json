@@ -104,12 +104,10 @@
     "yaml"
   ],
 
-  // updated 2023-09-12 03:14
-  // https://github.com/antfu/vscode-file-nesting-config
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "package.json": ".*,netlify*,pnpm*,yarn*,npm*,uno*,vercel*, tsconfig.*,eslint*"
+    "package.json": ".*,netlify*,pnpm*,yarn*,npm*,uno*,vercel*, tsconfig.*,eslint*,*.js"
   },
   "typescript.tsdk": "node_modules/typescript/lib"
 }

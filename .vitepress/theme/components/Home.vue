@@ -1,5 +1,4 @@
 <script setup>
-import { ref } from 'vue'
 import { useRouter } from 'vitepress'
 import { data as postsAll } from '../posts.data'
 import DateShow from './module/DateShow.vue'
@@ -30,7 +29,7 @@ const routerPage = url => router.go(url)
     {{ data.frontmatter.value.title }}
   </div> -->
   <div id="out">
-    <div id="container">
+    <div id="container" class="m-3">
       <ul style="width: 100%;">
         <li
           v-for="{ title, url, date, frontmatter, tag } of posts" id="row" :key="url" class="m-1"

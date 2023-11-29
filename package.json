@@ -14,12 +14,13 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "2.1.0",
-    "@iconify/json": "^2.2.145",
-    "@unocss/eslint-config": "^0.57.7",
+    "@iconify/json": "^2.2.149",
     "eslint": "^8.54.0",
-    "unocss": "^0.55.7",
+    "unocss": "^0.57.7",
+    "unplugin-auto-import": "^0.17.1",
     "unplugin-icons": "^0.17.4",
-    "vitepress": "1.0.0-rc.29"
+    "unplugin-vue-components": "^0.25.2",
+    "vite": "^5.0.2",
+    "vitepress": "1.0.0-rc.31"
   }
-
 }

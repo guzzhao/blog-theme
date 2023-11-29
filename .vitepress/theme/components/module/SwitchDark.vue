@@ -1,6 +1,5 @@
 <script  setup>
 import { useData } from 'vitepress'
-import { ref } from 'vue'
 import FluentEmojiFlatSun from '~icons/fluent-emoji-flat/sun'
 import FluentEmojiFlatCrescentMoon from '~icons/fluent-emoji-flat/crescent-moon'
 import FluentEmojiFlatSunWithFace from '~icons/fluent-emoji-flat/sun-with-face'

@@ -2,8 +2,6 @@ import 'virtual:uno.css'
 import DefaultTheme from 'vitepress/theme'
 import Layout from './components/Layout.vue'
 import Tags from './components/Tags.vue'
-
-
 import './style/vars.css'
 
 export default {
@@ -12,6 +10,5 @@ export default {
   enhanceApp: (ctx) => {
     ctx.app.component('Tags', Tags)
   },
-
 
 }

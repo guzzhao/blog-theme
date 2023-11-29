@@ -4,6 +4,7 @@ import ArticleFooter from './module/ArticleFooter.vue'
 import ArticleHead from './module/ArticleHead.vue'
 import NotFound from './NotFound.vue'
 import Home from './Home.vue'
+import Footer from './Footer.vue'
 
 const { Layout } = DefaultTheme
 </script>
@@ -19,6 +20,9 @@ const { Layout } = DefaultTheme
 
     <template #home-hero-before>
       <Home />
+    </template>
+    <template #home-hero-after>
+      <Footer />
     </template>
 
     <template #not-found>
