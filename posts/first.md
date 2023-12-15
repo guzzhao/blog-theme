@@ -4,23 +4,17 @@ date: 2023-09-16
 author: gu
 intro : 介绍md
 tag : 🤣
-
+public : true
 
 ---
 
-
-
 # Using custom anchors {#my-anchor}
-
-
 
 [back1](./back1) <!-- 内联 -->
 
 [baidu](https://www.baidu.com)
 
-
 ## table
-
 
 | Tables        |      Are      |  Cool |
 | ------------- | :-----------: | ----: |
@@ -31,7 +25,6 @@ tag : 🤣
 ::: info
 This is an info box.
 :::
-
 
 ::: tip
 This is a tip.
@@ -49,24 +42,17 @@ This is a dangerous warning.
 This is a details block.
 :::
 
-
 ::: info 提示
 提示内容
 :::
-
-
-
 
 ## emoji
 
 :tada: :100:
 
-
 `https://github.com/markdown-it/markdown-it-emoji/blob/master/lib/data/full.json`
 
 [[toc]]
-
-
 
 # 高亮
 
@@ -77,8 +63,6 @@ export default {
 }
 ```
 
-
-
 ```js:line-numbers
 export default {
   name: 'MyComponent', // [!code  focus]
@@ -86,10 +70,6 @@ export default {
 }
 ```
 
-
 # 图片
 
-
 ![wallroom](public/wallroom.jpg)
-
-

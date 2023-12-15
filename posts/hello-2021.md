@@ -2,9 +2,9 @@
 title: Reflections for 2020-2021
 date: 2021-01-11
 author: gu
+public : true
+
 ---
-
-
 
 With a new year upon us, we also have a new blog! In this post, we would like to take a look back at some of the highlights from 2020, as well as some ideas we have for 2021.
 

@@ -17,7 +17,7 @@ export { data }
 export default createContentLoader('posts/*.md', {
   excerpt: true,
   transform(raw): Post[] {
-    return raw
+    return raw.filter(e => e.frontmatter.public)
       .map(({ url, frontmatter, excerpt }) => ({
         title: frontmatter.title,
         url,
