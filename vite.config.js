@@ -15,7 +15,7 @@ export default defineConfig({
   resolve: {
     alias: [
       {
-        find: /^.*\/VPNavBarAppearance\.vue$/,
+        find: /^.*\/VPNavBarExtra\.vue$/,
         replacement: fileURLToPath(
           new URL('./.vitepress/theme/components/module/SwitchDark.vue', import.meta.url),
         ),

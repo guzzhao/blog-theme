@@ -4,7 +4,7 @@ const logo = '/logo.svg'
 
 export default defineConfig({
   lang: 'zh-CN',
-  title: 'blog',
+  title: 'gzz',
   cleanUrls: true,
   markdown: {
     theme: 'vitesse-dark',
@@ -42,17 +42,33 @@ export default defineConfig({
   ],
   themeConfig: {
     logo,
-    aside: false,
     search: null,
+    aside: 'left',
+    outline: {
+      level: 'deep',
+      label: '大纲',
+
+    },
     nav: [
       {
         text: 'about',
         link: '/about',
       },
     ],
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com' },
-    ],
+    footer: {
+      message: 'gzz build',
+      copyright: '2023-∞',
+    },
+    lastUpdated: {
+      text: 'Updated at',
+      formatOptions: {
+        dateStyle: 'full',
+        timeStyle: 'medium',
+      },
+    },
+    // socialLinks: [
+    //   { icon: 'github', link: 'https://github.com' },
+    // ],
 
   },
 })
