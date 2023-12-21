@@ -55,8 +55,6 @@ This is a details block.
 
 `https://github.com/markdown-it/markdown-it-emoji/blob/master/lib/data/full.json`
 
-[[toc]]
-
 ## 高亮
 
 ```js
@@ -78,5 +76,7 @@ export default {
 ![wallroom](public/wallroom.jpg)
 
 ## 一级
-###  二级
+
+### 二级
+
 #### 三级

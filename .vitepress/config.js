@@ -44,11 +44,7 @@ export default defineConfig({
     logo,
     search: null,
     aside: 'left',
-    outline: {
-      level: 'deep',
-      label: '大纲',
-
-    },
+    outline: false, // 貌似有bug
     nav: [
       {
         text: 'about',
