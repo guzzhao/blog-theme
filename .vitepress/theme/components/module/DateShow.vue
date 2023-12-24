@@ -1,5 +1,6 @@
 <script setup>
 import { getDate } from '../../utils.js'
+import PhCalendarCheckDuotone from '~icons/ph/calendar-check-duotone'
 
 const props = defineProps(['date'])
 
@@ -9,5 +10,8 @@ const date = computed(() => {
 </script>
 
 <template>
-  <time>{{ date }} </time>
+  <div class="flex items-center">
+    <PhCalendarCheckDuotone />
+    <time>{{ date }} </time>
+  </div>
 </template>

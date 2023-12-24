@@ -45,12 +45,13 @@ export default defineConfig({
     search: null,
     aside: 'left',
     outline: false, // 貌似有bug
-    nav: [
-      {
-        text: 'about',
-        link: '/about',
-      },
-    ],
+    // nav: [
+    //   {
+    //     text: 'about',
+    //     link: '/about',
+    //   },
+    // ],
+
     footer: {
       message: 'gzz build',
       copyright: '2023-∞',

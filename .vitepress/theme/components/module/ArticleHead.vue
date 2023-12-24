@@ -11,7 +11,6 @@ const { frontmatter } = useData()
       {{ frontmatter.title }}
     </div>
     <div>
-      {{ frontmatter.tag }}
       <DateShow id="date" :date="frontmatter.date" />
     </div>
   </div>
