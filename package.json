@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "2.4.6",
-    "@iconify/json": "^2.2.160",
+    "@iconify/json": "^2.2.161",
     "eslint": "^8.56.0",
     "unocss": "^0.58.0",
     "unplugin-auto-import": "^0.17.2",

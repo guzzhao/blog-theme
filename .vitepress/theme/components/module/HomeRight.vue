@@ -3,11 +3,14 @@ const props = defineProps({
   tags: Object,
 })
 
-const emit = defineEmits(['pitchTag'])
+const emit = defineEmits(['pitchTag', 'changeSimple'])
 
 function change(v) {
   console.log(v)
   emit('pitchTag', v)
+}
+function changeSimple() {
+  emit('changeSimple')
 }
 
 const { tags } = toRefs(props)
@@ -15,13 +18,18 @@ console.log('props', tags.value)
 </script>
 
 <template>
-  <div class="flex flex-col items-center p-10">
+  <div class="w-full flex flex-col items-center p-10 pt-0 m-1 ">
     <img src="https://images.unsplash.com/photo-1703100941710-3b860fa37415" alt="" class="rounded-5 h-32 w-32">
     <div>
       github wechat
     </div>
   </div>
-  <div class="b-1 b-gray b-solid rounded-5 p-3">
+  <div>
+    <button @click="changeSimple">
+      简单
+    </button>
+  </div>
+  <div class="w-full m-1 ">
     <div class="p-1">
       tags
     </div>
@@ -30,3 +38,7 @@ console.log('props', tags.value)
     </span>
   </div>
 </template>
+
+<style scoped>
+
+</style>

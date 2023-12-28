@@ -4,7 +4,7 @@ const logo = '/logo.svg'
 
 export default defineConfig({
   lang: 'zh-CN',
-  title: 'gzz',
+  // title: 'gzz',
   cleanUrls: true,
   markdown: {
     theme: 'vitesse-dark',
