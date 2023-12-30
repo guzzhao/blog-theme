@@ -6,15 +6,10 @@ const { x, y } = useWindowScroll({ behavior: 'smooth' })
 function goTop() {
   y.value = 0
 }
-const navHeight = useCssVar('--vp-nav-height')
 
 const isActive = ref(false)
 
 watch(y, (oldValue, newValue) => {
-  if (y > 0) {
-    console.log('aa')
-  }
-
   isActive.value = y.value > 300
 })
 </script>

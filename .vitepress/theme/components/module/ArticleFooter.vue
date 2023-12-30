@@ -5,7 +5,7 @@ import BackToTop from './BackToTop.vue'
 <template>
   <div id="footer">
     <BackToTop />
-    <a class="link" href="/">← Back </a>
+    <a class="link" href="/">← Home </a>
   </div>
 </template>
 

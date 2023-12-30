@@ -20,9 +20,7 @@ const { Layout } = DefaultTheme
     <template #home-hero-before>
       <Home />
     </template>
-    <template #home-hero-after>
-      <!-- <Footer /> -->
-    </template>
+    <template #home-hero-after />
 
     <template #not-found>
       <NotFound />

@@ -1,5 +1,5 @@
 <script setup>
-import { useData, useRouter } from 'vitepress'
+import { useRouter } from 'vitepress'
 import { data as postsAll } from '../posts.data'
 import DateShow from './module/DateShow.vue'
 import BackToTop from './module/BackToTop.vue'
@@ -91,7 +91,7 @@ const routerPage = url => router.go(url)
 <style scoped>
 .container {
   width: 80%;
-  min-height: 100%;
+  min-height: 80vh;
   background-color: var(--center-bg);
 }
 

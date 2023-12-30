@@ -4,7 +4,7 @@ const logo = '/logo.svg'
 
 export default defineConfig({
   lang: 'zh-CN',
-  // title: 'gzz',
+  titleTemplate: false,
   cleanUrls: true,
   markdown: {
     theme: 'vitesse-dark',
@@ -43,7 +43,7 @@ export default defineConfig({
   themeConfig: {
     logo,
     search: null,
-    aside: 'left',
+    aside: false,
     outline: false, // 貌似有bug
     // nav: [
     //   {
@@ -57,7 +57,7 @@ export default defineConfig({
       copyright: '2023-∞',
     },
     lastUpdated: {
-      text: 'Updated at',
+      text: '最后更新 ',
       formatOptions: {
         dateStyle: 'full',
         timeStyle: 'medium',

@@ -45,6 +45,7 @@
 .VPHome {
   display: flex;
   justify-content: center;
+  padding-bottom: 30px !important;
 }
 
 .VPDoc>div {
@@ -52,4 +53,10 @@
   background-color: var(--center-bg);
   padding-top: 30px;
   border-radius: var(--center-radius)
+}
+
+
+.edit-info{
+  background-color: #0cb8ed1e;
+
 }
