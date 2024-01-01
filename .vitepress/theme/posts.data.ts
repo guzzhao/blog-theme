@@ -15,7 +15,7 @@ declare const data: Post[]
 export { data }
 
 export default createContentLoader('posts/*.md', {
-  excerpt: true,
+  excerpt: false,
   transform(raw): Post[] {
     return raw.filter(e => e.frontmatter.public)
       .map(({ url, frontmatter, excerpt }) => ({
@@ -25,6 +25,8 @@ export default createContentLoader('posts/*.md', {
         date: formatDate(frontmatter.date),
         frontmatter,
         tag: frontmatter.tag || '😃',
+        description: frontmatter.description || '',
+        year: formatYear(frontmatter.date),
       }))
       .sort((a, b) => b.date.time - a.date.time)
   },
@@ -36,4 +38,8 @@ function formatDate(raw: string): Post['date'] {
     time: +date,
     string: date.toLocaleDateString(),
   }
+}
+function formatYear(raw: string): number {
+  const date = new Date(raw)
+  return date.getFullYear()
 }

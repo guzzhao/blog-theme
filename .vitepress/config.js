@@ -9,11 +9,11 @@ export default defineConfig({
   markdown: {
     theme: 'vitesse-dark',
     lineNumbers: false,
-    anchor: {
-      slugify(str) {
-        return encodeURIComponent(str)
-      },
-    },
+    // anchor: {
+    //   slugify(str) {
+    //     return encodeURIComponent(str)
+    //   },
+    // },
   },
   lastUpdated: true,
   head: [
@@ -52,10 +52,7 @@ export default defineConfig({
     //   },
     // ],
 
-    footer: {
-      message: 'gzz build',
-      copyright: '2023-∞',
-    },
+    footer: true,
     lastUpdated: {
       text: '最后更新 ',
       formatOptions: {

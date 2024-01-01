@@ -10,7 +10,9 @@ const props = defineProps({
     default: false,
   },
 })
-const formatted = useDateFormat(props.date, props.isSimple ? 'YYYY/MM/DD' : 'YYYY年MM月DD日')
+const formatted = computed(() => {
+  return useDateFormat(props.date, props.isSimple ? 'YYYY/MM/DD' : 'YYYY年MM月DD日').value
+})
 </script>
 
 <template>
