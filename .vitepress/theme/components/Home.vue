@@ -42,12 +42,6 @@ watch(tagRef, () => {
   console.log(showyearUrls.value)
 }, { immediate: true })
 
-const isSimple = ref(false)
-
-function changeSimple() {
-  isSimple.value = !isSimple.value
-}
-
 const router = useRouter()
 const routerPage = url => router.go(url)
 </script>
@@ -60,13 +54,16 @@ const routerPage = url => router.go(url)
     <div class="flex flex-col  mt-8 sm:flex-row">
       <div class="left w-3/4">
         <template v-for="{ title, url, date, tag, description, year } of posts" :key="url">
-          <div v-if="Object.values(showyearUrls).includes(url)" class="select-none text-5em pt-1 pl-5 op50 font-bold z-0 slide-enter pointer-events-none">
+          <div
+            v-if="Object.values(showyearUrls).includes(url)"
+            class="select-none text-5em pt-1 pl-5 op50 font-bold z-0 slide-enter pointer-events-none"
+          >
             {{ year }}
           </div>
-          <div id="row" class="border-b z-1 p-1 pb-3" :class="{ 'm-1': !isSimple }">
+          <div id="row" class="border-b z-1 p-1 pb-3">
             <div class="flex items-center justify-between">
               <div flex>
-                <h1 :class="{ 'font-size-1rem': isSimple, 'font-size-2rem ': !isSimple }" class=" hover:text-#30a9de  cursor-pointer font-bold" @click="routerPage(url)">
+                <h1 class=" hover:text-#30a9de  cursor-pointer font-bold" @click="routerPage(url)">
                   {{ title }}
                 </h1>
                 <div class="px-4">
@@ -77,7 +74,7 @@ const routerPage = url => router.go(url)
                 {{ useDateFormat(date.time, 'MM月DD日').value }}
               </div>
             </div>
-            <div v-if="!isSimple" class="flex font-size-3 mr-1">
+            <div class="flex font-size-3 mr-1">
               <div
                 v-if="description"
                 class=" hover:text-#30a9de  flex items-center  max-w-3/5 overflow-hidden whitespace-nowrap"
@@ -98,11 +95,6 @@ const routerPage = url => router.go(url)
   </div>
 
   <BackToTop />
-  <div id="tags">
-    <div :class="{ actice: isSimple }" @click="changeSimple">
-      简单
-    </div>
-  </div>
 </template>
 
 <style scoped>
