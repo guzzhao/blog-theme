@@ -19,7 +19,7 @@ function goBack() {
 <style scoped>
 #footer {
   position: fixed;
-  right: 2rem;
+  right: 20px;
   bottom: 4rem;
 }
 </style>
