@@ -1,37 +1,36 @@
 <script setup>
 import { useData } from 'vitepress'
+import { useBrowserLocation, useClipboard } from '@vueuse/core'
 import DateShow from './DateShow.vue'
+import PhCopyDuotone from '~icons/ph/copy-duotone'
 
 const { frontmatter } = useData()
+const location = useBrowserLocation()
+const { copy, isSupported } = useClipboard()
+
+function handleCopy() {
+  if (!isSupported) {
+    return
+  }
+  console.log(location.value.href)
+  copy(location.value.href)
+}
 </script>
 
 <template>
-  <div id="main">
-    <div id="h1">
+  <div class="flex flex-col w-200">
+    <div class="font-size-12 h-auto font-bold break-all mb-5 ">
       {{ frontmatter.title }}
     </div>
-    <div>
+
+    <div class="flex">
       <DateShow id="date" :date="frontmatter.date" />
+      <PhCopyDuotone class=" cursor-pointer " @click="handleCopy" />
     </div>
   </div>
 </template>
 
 <style scoped>
-#main{
-  display: flex;
-  align-content: center;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 5vh;
-
-}
-
-#h1{
-  font-size: 2em;
-  height: 7vh
-
-}
-
 #date{
   font: 2em;
   /* align-self: flex-end; */

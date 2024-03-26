@@ -1,5 +1,5 @@
 ---
-title: next10-title
+title: next10-title-looooooooooooooooooooooooooooooooooooooooooooooooong
 date: 2021-01-11
 author: gu
 tag : 🤣

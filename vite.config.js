@@ -26,6 +26,12 @@ export default defineConfig({
           new URL('./.vitepress/theme/components/module/Footer.vue', import.meta.url),
         ),
       },
+      {
+        find: /^.*\/VPNav\.vue$/,
+        replacement: fileURLToPath(
+          new URL('./.vitepress/theme/components/module/empty.vue', import.meta.url),
+        ),
+      },
     ],
   },
   plugins: [

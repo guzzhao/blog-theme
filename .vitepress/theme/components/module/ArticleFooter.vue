@@ -1,11 +1,18 @@
 <script setup>
+import { useRouter } from 'vitepress'
 import BackToTop from './BackToTop.vue'
+import StreamlineReturn2Solid from '~icons/streamline/return-2-solid'
+
+const { go } = useRouter()
+function goBack() {
+  go('/')
+}
 </script>
 
 <template>
   <div id="footer">
     <BackToTop />
-    <a class="link" href="/">← Home </a>
+    <StreamlineReturn2Solid class="cursor-pointer" @click="goBack" />
   </div>
 </template>
 

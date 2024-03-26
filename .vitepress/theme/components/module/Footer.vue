@@ -6,9 +6,11 @@ const { frontmatter } = useData()
 
 <template>
   <div class="flex justify-center">
-    <div>
+    <div class="mr-5">
       {{ frontmatter.footer }}
     </div>
+    |
+    <a href="https://github.com/guzzhao/myBlog" class="ml-5">theme</a>
   </div>
 </template>
 
