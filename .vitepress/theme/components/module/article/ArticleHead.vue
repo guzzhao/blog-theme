@@ -1,7 +1,7 @@
 <script setup>
 import { useData } from 'vitepress'
 import { useBrowserLocation, useClipboard } from '@vueuse/core'
-import DateShow from './DateShow.vue'
+import DateShow from '../DateShow.vue'
 import PhCopyDuotone from '~icons/ph/copy-duotone'
 
 const { frontmatter } = useData()

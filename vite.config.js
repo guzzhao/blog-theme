@@ -15,15 +15,9 @@ export default defineConfig({
   resolve: {
     alias: [
       {
-        find: /^.*\/VPNavBarExtra\.vue$/,
-        replacement: fileURLToPath(
-          new URL('./.vitepress/theme/components/module/SwitchDark.vue', import.meta.url),
-        ),
-      },
-      {
         find: /^.*\/VPFooter\.vue$/,
         replacement: fileURLToPath(
-          new URL('./.vitepress/theme/components/module/Footer.vue', import.meta.url),
+          new URL('./.vitepress/theme/components/module//Footer.vue', import.meta.url),
         ),
       },
       {

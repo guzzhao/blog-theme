@@ -1,5 +1,5 @@
 <script setup>
-import SwitchDark from './SwitchDark.vue'
+import SwitchDark from '../btn/SwitchDark.vue'
 
 const props = defineProps({
   tags: Object,

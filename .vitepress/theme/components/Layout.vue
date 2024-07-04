@@ -1,7 +1,7 @@
 <script setup>
 import DefaultTheme from 'vitepress/theme'
-import ArticleFooter from './module/ArticleFooter.vue'
-import ArticleHead from './module/ArticleHead.vue'
+import ArticleFooter from './module/article/ArticleFooter.vue'
+import ArticleHead from './module/article/ArticleHead.vue'
 import NotFound from './NotFound.vue'
 import Home from './Home.vue'
 

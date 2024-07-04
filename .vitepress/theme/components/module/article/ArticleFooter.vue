@@ -1,6 +1,6 @@
 <script setup>
 import { useRouter } from 'vitepress'
-import BackToTop from './BackToTop.vue'
+import BackToTop from '../btn/BackToTop.vue'
 import StreamlineReturn2Solid from '~icons/streamline/return-2-solid'
 
 const { go } = useRouter()

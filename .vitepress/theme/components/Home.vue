@@ -1,11 +1,9 @@
 <script setup>
 import { useRouter } from 'vitepress'
-import { useDateFormat, watchArray } from '@vueuse/core'
+import { useDateFormat } from '@vueuse/core'
 import { data as postsAll } from '../posts.data'
-import BackToTop from './module/BackToTop.vue'
-import HomeTop from './module/HomeTop.vue'
-import HomeRight from './module/HomeRight.vue'
-import FluentTextDescription20Regular from '~icons/fluent/text-description-20-regular'
+import BackToTop from './module/btn/BackToTop.vue'
+import HomeTop from './module/home/HomeTop.vue'
 
 const posts = ref(postsAll)
 const tagRef = ref(null)

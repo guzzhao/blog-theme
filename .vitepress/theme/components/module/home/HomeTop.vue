@@ -1,7 +1,7 @@
 <script setup>
 import { useDateFormat, useNow } from '@vueuse/core'
 import { useData, useRouter } from 'vitepress'
-import SwitchDark from './SwitchDark.vue'
+import SwitchDark from '../btn/SwitchDark.vue'
 import PhSunHorizonDuotone from '~icons/ph/sun-horizon-duotone'
 
 const { frontmatter } = useData()
