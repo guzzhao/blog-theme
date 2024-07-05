@@ -45,38 +45,43 @@ const routerPage = url => router.go(url)
 </script>
 
 <template>
-  <div class="flex justify-center">
-    <div class="container m-3 p-2">
-      <div>
-        <HomeTop />
-      </div>
-      <div class="m-5 mt-20">
-        <template v-for="{ title, url, date, tag, description, year } of posts" :key="url">
-          <div
-            v-if="Object.values(showyearUrls).includes(url)"
-            class="h-10 select-none text-5em pt-1 pl-5 op50 font-bold z-0 slide-enter pointer-events-none"
-          >
-            {{ year }}
+  <div class="mx-auto max-w-75ch">
+    <div>
+      <HomeTop />
+    </div>
+    <div class="m-5 mt-20">
+      <div class="max-w-md mx-auto mt-10">
+        <!-- <div class="relative">
+          <button id="dropdownButton" class="w-full px-4 py-2 text-left bg-white border border-gray-300 rounded shadow-sm focus:outline-none focus:border-blue-500" onclick="toggleDropdown()">
+            Select Options
+          </button>
+          <div id="dropdownMenu" class="absolute z-10  w-full mt-2 bg-white border border-gray-300 rounded shadow-lg">
+            <label class="block px-4 py-2">
+              Option 1
+            </label>
           </div>
-          <div id="row" class="border-b flex justify-between items-center m-2 h-auto">
-            <h1 class=" hover:text-#30a9de  cursor-pointer font-bold font-size-2em break-all m-2" @click="routerPage(url)">
-              {{ title }}
-            </h1>
-            <div class=" font-size-3 flex-shrink-0">
-              [{{ tag }}] {{ useDateFormat(date.time, 'MM月DD日').value }}
-            </div>
+        </div> -->
+      </div>
+      <template v-for="{ title, url, date, tag, description, year } of posts" :key="url">
+        <div
+          v-if="Object.values(showyearUrls).includes(url)"
+          class="select-none text-10 mt-5 pl-5 op50 font-bold z-0  pointer-events-none italic"
+        >
+          {{ year }}
+        </div>
+        <div class="border-b flex m-2 transition-all duration-300 font-size-5">
+          <div style="flex:0 0 4rem" class="italic">
+            {{ useDateFormat(date.time, 'MM-DD').value }}
+          </div>
 
-            <!-- <div class="flex font-size-1rm mr-1">
-              <div v-if="description" class=" hover:text-#30a9de  flex items-center">
-                <FluentTextDescription20Regular />
-                <div :title="description">
-                  {{ description }}
-                </div>
-              </div>
-            </div> -->
+          <div class="op100 hover:op70  theme cursor-pointer break-all " @click="routerPage(url)">
+            {{ title }}
           </div>
-        </template>
-      </div>
+          <div class="font-size-3">
+            {{ tag }}
+          </div>
+        </div>
+      </template>
     </div>
   </div>
 
@@ -85,31 +90,12 @@ const routerPage = url => router.go(url)
 
 <style scoped>
 .container {
-  width: 60%;
-  background-color: var(--center-bg);
-  border: 1px solid rgba(18, 69, 88, 0.09);
-
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 75ch;
 }
 
-#tags {
-  position: fixed;
-  top: 90vh;
-  left: 20px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-
-  .actice,
-  :hover {
-    padding-left: 8px;
-    transition: all 0.3s ease-out;
-  }
-}
-
-#row {
-  &:hover {
-    background-color: rgba(18, 69, 88, 0.09);
-    transition: background-color 3s ease;
-  }
+.theme{
+  color:var(--theme-color)
 }
 </style>
