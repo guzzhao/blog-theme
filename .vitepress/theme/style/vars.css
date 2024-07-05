@@ -10,36 +10,13 @@
     monospace; */
 
   --vp-c-bg: #fcfcfc;
-  --center-bg: #ffffff;
-  --center-radius: 0.25rem
+
+  --theme-color: #00629f;
 }
 
 .dark {
 
   --vp-c-bg: #1d2025;
-  --center-bg: #26282c;
 
 }
 
-/* .VPNav {
-  display: none;
-} */
-
-/* .VPHome {
-  display: flex;
-  justify-content: center;
-  padding-bottom: 30px !important;
-} */
-
-/* .VPDoc>div {
-  max-width: 80%;
-  background-color: var(--center-bg);
-  padding-top: 30px;
-  border-radius: var(--center-radius)
-} */
-
-
-/* .edit-info{
-  background-color: #0cb8ed1e;
-
-} */
