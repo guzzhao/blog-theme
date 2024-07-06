@@ -9,6 +9,9 @@ export default defineConfig({
   markdown: {
     theme: 'vitesse-dark',
     lineNumbers: false,
+    image: {
+      lazyLoading: true,
+    },
     // anchor: {
     //   slugify(str) {
     //     return encodeURIComponent(str)

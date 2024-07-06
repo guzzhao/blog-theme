@@ -1,14 +1,16 @@
 ---
-title: first-posts
+title: markdown 演示
 date: 2023-09-16
 author: gu
-description : 介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md介绍md
-tag : 🤪🤪🤪
+tag : 演示
 public : true
 ---
+
 [[TOC]]
 
-## Using custom anchors {#my-anchor}
+## 自定义锚点 {#my-anchor}
+
+## url
 
 [back1](./next1) <!-- 内联 -->
 
@@ -16,14 +18,13 @@ public : true
 
 ## table
 
-😃👧👧
-😂😂😂
-
 | Tables        |      Are      |  Cool |
 | ------------- | :-----------: | ----: |
 | col 3 is      | right-aligned | $1600 |
 | col 2 is      |   centered    |   $12 |
 | zebra stripes |   are neat    |    $1 |
+
+-------
 
 ::: info
 This is an info box.
@@ -51,25 +52,21 @@ This is a details block.
 
 ## emoji
 
-:tada: :100:
+😃👧👧
+😂😂😂
 
-`https://github.com/markdown-it/markdown-it-emoji/blob/master/lib/data/full.json`
+:tada: :100:
 
 ## 高亮
 
-```js
+```js:line-numbers {2-3}
 export default {
   name: 'MyComponent',
   // ...
 }
 ```
 
-```js:line-numbers
-export default {
-  name: 'MyComponent', // [!code  focus]
-  // ...
-}
-```
+`Java`
 
 ## 图片
 
