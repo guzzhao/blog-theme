@@ -1,9 +1,8 @@
-<script  setup>
+<script setup>
 import { useData } from 'vitepress'
-import FluentEmojiFlatSun from '~icons/fluent-emoji-flat/sun'
-import FluentEmojiFlatCrescentMoon from '~icons/fluent-emoji-flat/crescent-moon'
-import FluentEmojiFlatSunWithFace from '~icons/fluent-emoji-flat/sun-with-face'
-import FluentEmojiFlatFirstQuarterMoonFace from '~icons/fluent-emoji-flat/first-quarter-moon-face'
+import FluentFlashlight24Filled from '~icons/fluent/flashlight-24-filled'
+import FluentFlashlightOff24Filled from '~icons/fluent/flashlight-off-24-filled'
+import IcomoonFreeSwitch from '~icons/icomoon-free/switch'
 
 const mouseover = ref(false)
 const { isDark } = useData()
@@ -16,13 +15,13 @@ function switchDark() {
 <template>
   <div id="main" @click="switchDark" @mouseover="mouseover = true" @mouseleave="mouseover = false">
     <template v-if="isDark">
-      <FluentEmojiFlatFirstQuarterMoonFace v-if="mouseover" />
-      <FluentEmojiFlatCrescentMoon v-else />
+      <IcomoonFreeSwitch v-if="mouseover" />
+      <FluentFlashlightOff24Filled v-else />
     </template>
 
     <template v-else>
-      <FluentEmojiFlatSunWithFace v-if="mouseover" />
-      <FluentEmojiFlatSun v-else />
+      <IcomoonFreeSwitch v-if="mouseover" />
+      <FluentFlashlight24Filled v-else />
     </template>
   </div>
 </template>
