@@ -10,7 +10,8 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@vueuse/core": "^10.11.0"
+    "@vueuse/core": "^10.11.0",
+    "vitepress-plugin-rss": "^0.2.8"
   },
   "devDependencies": {
     "@antfu/eslint-config": "2.21.2",

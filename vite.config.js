@@ -6,8 +6,8 @@ import AutoImport from 'unplugin-auto-import/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import Icons from 'unplugin-icons/vite'
 import Components from 'unplugin-vue-components/vite'
+import { RssPlugin } from 'vitepress-plugin-rss'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   optimizeDeps: {
     exclude: ['vitepress'],
@@ -37,9 +37,9 @@ export default defineConfig({
       ],
       dts: 'types/auto-imports.d.ts',
       eslintrc: {
-        enabled: true, // Default `false`
-        filepath: 'types/.eslintrc-auto-import.json', // Default `./.eslintrc-auto-import.json`
-        globalsPropValue: true, // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
+        enabled: true,
+        filepath: 'types/.eslintrc-auto-import.json',
+        globalsPropValue: true,
       },
     }),
     Components({
@@ -47,8 +47,12 @@ export default defineConfig({
       dts: 'types/components.d.ts',
     }),
     Icons({
-      // experimental
       compiler: 'vue3',
     }),
+    [RssPlugin({
+      title: 'guzzhao',
+      baseUrl: 'https://blog-demo.guzha0.com',
+      copyright: 'Copyright (c) 2018-present, guzzhao',
+    })],
   ],
 })

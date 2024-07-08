@@ -59,8 +59,8 @@ export default defineConfig({
     lastUpdated: {
       text: '最后更新 ',
       formatOptions: {
-        dateStyle: 'full',
-        timeStyle: 'medium',
+        dateStyle: 'short',
+        timeStyle: 'short',
       },
     },
     // socialLinks: [

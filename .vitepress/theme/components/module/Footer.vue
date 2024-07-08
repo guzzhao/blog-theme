@@ -1,16 +1,15 @@
 <script setup>
-import { useData } from 'vitepress'
 
-const { frontmatter } = useData()
 </script>
 
 <template>
-  <div class="flex justify-center">
-    <div class="mr-5">
-      {{ frontmatter.footer }}
-    </div>
-    |
-    <a href="https://github.com/guzzhao/myBlog" class="ml-5">theme</a>
+  <div class="flex flex-col justify-center items-center p-5">
+    <p class="message">
+      <a href="https://github.com/guzzhao/myBlog" class="ml-5">theme</a> with vitepress
+    </p>
+    <p class="copyright">
+      Copyright © 2024-present guzzhao
+    </p>
   </div>
 </template>
 

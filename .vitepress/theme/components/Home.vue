@@ -21,7 +21,7 @@ watch(selectedTags, () => {
   })
 }, { immediate: true, deep: true })
 
-const tagsHidden = ref(false)
+const tagsHidden = ref(true)
 const router = useRouter()
 const routerPage = url => router.go(url)
 
@@ -73,7 +73,7 @@ function changeHidden(t) {
           <div class="op100 hover:op70  theme cursor-pointer break-all " @click="routerPage(url)">
             {{ title }}
           </div>
-          <div class="font-size-3">
+          <div class="font-size-3 pl-1">
             {{ tag }}
           </div>
         </div>
