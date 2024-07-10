@@ -1,5 +1,7 @@
 <script setup>
+import { useData, useRouter } from 'vitepress'
 
+const { frontmatter } = useData()
 </script>
 
 <template>
@@ -8,10 +10,9 @@
       <a href="https://github.com/guzzhao/myBlog" class="ml-5">theme</a> with vitepress
     </p>
     <p class="copyright">
-      Copyright © 2024-present guzzhao
+      {{ frontmatter.footer }}
     </p>
   </div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

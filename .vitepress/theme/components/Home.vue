@@ -3,7 +3,6 @@ import { useRouter } from 'vitepress'
 import { useDateFormat } from '@vueuse/core'
 import { data as postsAll } from '../posts.data'
 import BackToTop from './module/btn/BackToTop.vue'
-import HomeTop from './module/home/HomeTop.vue'
 
 const tags = postsAll.map(e => e.tag)
 const selectedTags = ref([])
@@ -44,15 +43,12 @@ function changeHidden(t) {
 
 <template>
   <div class="mx-auto max-w-75ch">
-    <div>
-      <HomeTop />
-    </div>
     <div class="m-10 mt-10">
       <div class="w-20 mx-auto mt-10 fixed left-10" @mouseleave="changeHidden(true)" @mouseenter="changeHidden(false)">
-        <button id="dropdownButton" class="w-full px-4 py-2 text-center bg-white border border-gray-300 rounded shadow-sm focus:outline-none focus:border-blue-500">
+        <button id="dropdownButton" class="w-full px-4 py-2 text-center  border border-gray-300 rounded shadow-sm focus:outline-none focus:border-blue-500">
           tags
         </button>
-        <div id="dropdownMenu" class="absolute z-10  w-full  bg-white border border-gray-300 rounded shadow-lg " :class="{ hidden: tagsHidden }">
+        <div id="dropdownMenu" class="absolute z-10  w-full   border border-gray-300 rounded shadow-lg " :class="{ hidden: tagsHidden }">
           <label v-for="tag in tags" :key="tag" class=" truncate block text-center px-4 py-2" @click="clickTag(tag)">
             {{ tag }}
           </label>

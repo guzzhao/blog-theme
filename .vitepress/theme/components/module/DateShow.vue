@@ -11,7 +11,7 @@ const props = defineProps({
   },
 })
 const formatted = computed(() => {
-  return useDateFormat(props.date, props.isSimple ? 'YYYY/MM/DD' : 'YYYY年MM月DD日').value
+  return useDateFormat(props.date, props.isSimple ? 'YYYY/MM/DD HH:mm' : 'YYYY年MM月DD日 HH:mm').value
 })
 </script>
 

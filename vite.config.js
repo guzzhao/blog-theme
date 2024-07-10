@@ -17,13 +17,13 @@ export default defineConfig({
       {
         find: /^.*\/VPFooter\.vue$/,
         replacement: fileURLToPath(
-          new URL('./.vitepress/theme/components/module//Footer.vue', import.meta.url),
+          new URL('./.vitepress/theme/components/module/view/Footer.vue', import.meta.url),
         ),
       },
       {
         find: /^.*\/VPNav\.vue$/,
         replacement: fileURLToPath(
-          new URL('./.vitepress/theme/components/module/empty.vue', import.meta.url),
+          new URL('./.vitepress/theme/components/module/view/Nav.vue', import.meta.url),
         ),
       },
     ],

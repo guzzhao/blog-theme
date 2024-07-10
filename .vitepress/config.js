@@ -4,7 +4,9 @@ const logo = '/logo.svg'
 
 export default defineConfig({
   lang: 'zh-CN',
-  titleTemplate: false,
+  title: 'GU',
+  titleTemplate: '嘀嘀嘀~~',
+  footer: 'Copyright © 2024-present guzzhao',
   cleanUrls: true,
   markdown: {
     theme: 'vitesse-dark',
@@ -12,11 +14,6 @@ export default defineConfig({
     image: {
       lazyLoading: true,
     },
-    // anchor: {
-    //   slugify(str) {
-    //     return encodeURIComponent(str)
-    //   },
-    // },
   },
   lastUpdated: true,
   head: [
@@ -63,9 +60,8 @@ export default defineConfig({
         timeStyle: 'short',
       },
     },
-    // socialLinks: [
-    //   { icon: 'github', link: 'https://github.com' },
-    // ],
+    socialLinks: [
+    ],
 
   },
 })
