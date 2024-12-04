@@ -6,6 +6,6 @@
 
 `bun install`
 
-`bun update`
+`bun update --latest`
 
 
