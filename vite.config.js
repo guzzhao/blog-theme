@@ -1,12 +1,12 @@
 import { URL, fileURLToPath } from 'node:url'
 import { defineConfig } from 'vite'
 
-import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import Icons from 'unplugin-icons/vite'
 import Components from 'unplugin-vue-components/vite'
 import { RssPlugin } from 'vitepress-plugin-rss'
+import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   optimizeDeps: {
@@ -29,7 +29,7 @@ export default defineConfig({
     ],
   },
   plugins: [
-    UnoCSS(),
+    tailwindcss(),
     AutoImport({
       imports: [
         'vue',

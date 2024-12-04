@@ -107,7 +107,7 @@
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "package.json": ".*,netlify*,pnpm*,yarn*,npm*,uno*,vercel*, tsconfig.*,eslint*,*.js"
+    "package.json": ".*,netlify*,pnpm*,yarn*,npm*,uno*,vercel*, tsconfig.*,eslint*,*.js,bun.lockb"
   },
   "typescript.tsdk": "node_modules/typescript/lib"
 }

@@ -10,14 +10,16 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@tailwindcss/vite": "4.0.0-beta.4",
     "@vueuse/core": "12.0.0",
+    "tailwindcss": "4.0.0-beta.4",
     "vitepress-plugin-rss": "^0.3.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "3.11.2",
     "@iconify/json": "2.2.278",
+    "daisyui": "5.0.0-alpha.44",
     "eslint": "9.16.0",
-    "unocss": "0.65.0-beta.3",
     "unplugin-auto-import": "^0.18.6",
     "unplugin-icons": "^0.20.2",
     "unplugin-vue-components": "^0.27.5",

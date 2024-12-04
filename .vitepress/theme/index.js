@@ -1,4 +1,4 @@
-import 'virtual:uno.css'
+
 import DefaultTheme from 'vitepress/theme-without-fonts'
 import Layout from './components/Layout.vue'
 import './style/vars.css'
