@@ -2,7 +2,7 @@
   "recommendations": [
     "dbaeumer.vscode-eslint",
     "k--kato.intellij-idea-keybindings",
-    "vue.volar",
-    "antfu.unocss"
+    "bradlc.vscode-tailwindcss",
+    "vue.volar"
   ]
 }

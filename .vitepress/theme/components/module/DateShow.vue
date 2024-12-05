@@ -16,7 +16,7 @@ const formatted = computed(() => {
 </script>
 
 <template>
-  <div class="flex items-center">
+  <div class="flex items-center ">
     <PhCalendarCheckDuotone v-if="!props.isSimple" />
     <time>{{ formatted }} </time>
   </div>
