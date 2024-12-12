@@ -18,7 +18,7 @@ function handleCopy() {
 </script>
 
 <template>
-  <div class="flex flex-col w-200">
+  <div class="flex flex-col  items-center">
     <div class="font-size-12 h-auto font-bold break-all mb-5 ">
       {{ frontmatter.title }}
     </div>

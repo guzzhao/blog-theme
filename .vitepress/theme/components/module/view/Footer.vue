@@ -5,14 +5,19 @@ const { frontmatter } = useData()
 </script>
 
 <template>
-  <div class="flex flex-col justify-center items-center p-5">
-    <p class="message">
-      <a href="https://github.com/guzzhao/myBlog" class="ml-5">theme</a> with vitepress
-    </p>
-    <p class="copyright">
-      {{ frontmatter.footer }}
-    </p>
-  </div>
+
+  <footer class="footer footer-center text-base-content p-4">
+    <aside>
+      <p>
+        <a href="https://github.com/guzzhao/myBlog" class="ml-5">theme</a> with vitepress
+      </p>
+      <p>
+        {{ frontmatter.footer }}
+      </p>
+    </aside>
+  </footer>
+
+
 </template>
 
 <style scoped></style>

@@ -43,57 +43,40 @@ function clickTag(tag) {
 
 function changeHidden(t) {
   console.log(t);
-	tagsHidden.value = t;
+  tagsHidden.value = t;
 }
 </script>
 
 <template>
-  <div class="mx-auto max-w-75ch">
-    <div class="m-10 mt-10">
 
-      <div class="w-20 mx-auto mt-10 fixed left-10" @mouseleave="changeHidden(true)" @mouseenter="changeHidden(false)">
-        <button id="dropdownButton"
-          class="w-full px-4 py-2 text-center  border border-gray-300 rounded shadow-sm focus:outline-none focus:border-blue-500">
-          tags
-        </button>
-        <div id="dropdownMenu" class="absolute z-10  w-full   border border-gray-300 rounded shadow-lg "
-          :class="{ hidden: tagsHidden }">
-          <label v-for="tag in tags" :key="tag" class=" truncate block text-center px-4 py-2" @click="clickTag(tag)">
-            {{ tag }}
-          </label>
-        </div>
-      </div>
-      <template v-for="{ title, url, date, tag, description, year } of posts" :key="url">
+
+
+  <main class="container flex justify-center mx-auto max-w-200">
+
+    <template v-for="{ title, url, date, tag, description, year } of posts" :key="url">
+      <div class="list-disc pl-5 space-y-2">
         <div v-if="Object.values(yearUrls).includes(url)"
-          class="select-none text-10 mt-5 pl-5 op50 font-bold z-0  pointer-events-none italic">
+          class="select-none text-2xl font-bold z-0  pointer-events-none italic">
           {{ year }}
         </div>
-        <div class="border-b flex m-5 transition-all duration-300 font-size-5">
-          <div style="flex:0 0 4rem" class="italic">
-            {{ useDateFormat(date.time, 'MM-DD').value }}
-          </div>
-
-          <div class="op100 hover:op70  theme cursor-pointer break-all " @click="routerPage(url)">
+        <div class="text-blue-600  flex items-end text-xl ">
+          <div @click="routerPage(url)" class="cursor-pointer  hover:underline">
             {{ title }}
           </div>
-          <div class="font-size-3 pl-1">
-            {{ tag }}
-          </div>
+          <span class="text-gray-500 text-sm h-min cursor-default   ">
+            {{ tag }} {{ useDateFormat(date.time, 'MM-DD').value }}
+          </span>
         </div>
-      </template>
-    </div>
-  </div>
+      </div>
 
+    </template>
+
+
+  </main>
   <BackToTop />
 </template>
 
 <style scoped>
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 75ch;
-}
-
 .theme {
   color: var(--theme-color)
 }

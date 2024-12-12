@@ -11,17 +11,20 @@ const { Layout } = DefaultTheme;
 
 <template>
   <Layout>
-    <template #doc-before>
+  
+ 
+
+    <template #page-top>
+      <Home />
+    </template>
+
+    <template #doc-top>
       <ArticleHead />
     </template>
-    <template #doc-after>
+   <template #doc-bottom>
       <ArticleFooter />
     </template>
 
-    <template #home-hero-before>
-      <Home />
-    </template>
-    <template #home-hero-after />
 
     <template #not-found>
       <NotFound />
