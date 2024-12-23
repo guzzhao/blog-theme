@@ -12,14 +12,13 @@ function handleCopy() {
   if (!isSupported) {
     return
   }
-  console.log(location.value.href)
   copy(location.value.href)
 }
 </script>
 
 <template>
   <div class="flex flex-col  items-center">
-    <div class="font-size-12 h-auto font-bold break-all mb-5 ">
+    <div class="text-5xl h-auto font-bold break-all mb-5 ">
       {{ frontmatter.title }}
     </div>
 

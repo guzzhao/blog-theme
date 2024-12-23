@@ -5,24 +5,25 @@ import SwitchDark from '../btn/SwitchDark.vue'
 
 const { site, theme, page, frontmatter } = useData()
 
-const formatted = useDateFormat(useNow(), 'YYYY-MM-DD HH:mm:ss')
-const createTime = useDateFormat(frontmatter.value.date, 'YYYY-MM-DD HH:mm')
-const lastUpdated = useDateFormat(page.value.lastUpdated, 'YYYY-MM-DD HH:mm')
+console.log(site.value)
+console.log(theme.value)
+console.log(page.value)
+console.log(frontmatter.value)
+
+
 
 </script>
 
 <template>
 
-  <div class="navbar backdrop-blur-sm fixed top-0 z-1000">
+  <nav class="navbar backdrop-blur-sm z-1000 mb-10">
     <div class="flex-1">
-      <a class="btn btn-ghost text-xl">{{ site.title }}</a>
+      <a class="text-5xl font-bold">{{ site.title }}</a>
     </div>
     <div class="flex-none">
-      <button class="btn btn-square btn-ghost">
-        <SwitchDark />
-      </button>
+      <SwitchDark />
     </div>
-  </div>
+  </nav>
 
 </template>
 

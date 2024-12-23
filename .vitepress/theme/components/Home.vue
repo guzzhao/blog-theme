@@ -3,6 +3,9 @@ import { useDateFormat } from "@vueuse/core";
 import { useRouter } from "vitepress";
 import { data as postsAll } from "../posts.data";
 import BackToTop from "./module/btn/BackToTop.vue";
+import Nav from "./module/view/Nav.vue";
+import Footer from "./module/view/Footer.vue";
+
 
 const tags = postsAll.map((e) => e.tag);
 const selectedTags = ref([]);
@@ -49,30 +52,31 @@ function changeHidden(t) {
 
 <template>
 
-
-
-  <main class="container flex justify-center mx-auto max-w-200">
-
-    <template v-for="{ title, url, date, tag, description, year } of posts" :key="url">
-      <div class="list-disc pl-5 space-y-2">
-        <div v-if="Object.values(yearUrls).includes(url)"
-          class="select-none text-2xl font-bold z-0  pointer-events-none italic">
-          {{ year }}
-        </div>
-        <div class="text-blue-600  flex items-end text-xl ">
-          <div @click="routerPage(url)" class="cursor-pointer  hover:underline">
-            {{ title }}
+  <div class="container flex flex-col justify-center mx-auto max-w-200  h-full mt-10">
+    <Nav />
+    <main class="flex-grow" >
+      <template v-for="{ title, url, date, tag, description, year } of posts" :key="url">
+        <div class="list-disc pl-5 space-y-2">
+          <div v-if="Object.values(yearUrls).includes(url)"
+            class="select-none text-2xl font-bold z-0  pointer-events-none italic">
+            {{ year }}
           </div>
-          <span class="text-gray-500 text-sm h-min cursor-default   ">
-            {{ tag }} {{ useDateFormat(date.time, 'MM-DD').value }}
-          </span>
+          <div class="text-blue-600  flex items-end text-xl ">
+            <div @click="routerPage(url)" class="cursor-pointer  hover:underline">
+              {{ title }}
+            </div>
+            <span class="text-gray-500 text-sm h-min cursor-default   ">
+              {{ tag }} {{ useDateFormat(date.time, 'MM-DD').value }}
+            </span>
+          </div>
         </div>
-      </div>
 
-    </template>
+      </template>
+    </main>
+    <Footer />
+  </div>
 
 
-  </main>
   <BackToTop />
 </template>
 

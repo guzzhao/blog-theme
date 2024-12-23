@@ -13,7 +13,6 @@ const logo = '/logo.svg'
 export default defineConfig({
   lang: 'zh-CN',
   title: 'GU',
-  titleTemplate: '嘀嘀嘀~~',
   footer: 'Copyright © 2024-present guzzhao',
   cleanUrls: true,
   markdown: {
@@ -52,14 +51,8 @@ export default defineConfig({
     logo,
     search: null,
     aside: false,
-    outline: false, // 貌似有bug
-    // nav: [
-    //   {
-    //     text: 'about',
-    //     link: '/about',
-    //   },
-    // ],
-
+    outline: false,
+    nav: false,
     footer: true,
     lastUpdated: {
       text: '最后更新 ',
@@ -78,13 +71,13 @@ export default defineConfig({
         {
           find: /^.*\/VPFooter\.vue$/,
           replacement: fileURLToPath(
-            new URL('./theme/components/module/view/Footer.vue', import.meta.url),
+            new URL('./theme/components/module/Empty.vue', import.meta.url),
           ),
         },
         {
           find: /^.*\/VPNav\.vue$/,
           replacement: fileURLToPath(
-            new URL('./theme/components/module/view/Nav.vue', import.meta.url),
+            new URL('./theme/components/module/Empty.vue', import.meta.url),
           ),
         },
       ],
