@@ -18,7 +18,7 @@ function handleCopy() {
 
 <template>
   <div class="flex flex-col  items-center">
-    <div class="text-5xl h-auto font-bold break-all mb-5 ">
+    <div class="text-4xl h-auto font-bold break-all mb-5 ">
       {{ frontmatter.title }}
     </div>
 

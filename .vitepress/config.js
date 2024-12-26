@@ -12,8 +12,8 @@ const logo = '/logo.svg'
 
 export default defineConfig({
   lang: 'zh-CN',
-  title: 'GU',
-  footer: 'Copyright © 2024-present guzzhao',
+  title: '无名小卒',
+  footer: '',
   cleanUrls: true,
   markdown: {
     theme: 'vitesse-dark',
@@ -69,13 +69,13 @@ export default defineConfig({
     resolve: {
       alias: [
         {
-          find: /^.*\/VPFooter\.vue$/,
+          find: /^.*\/VPNav\.vue$/,
           replacement: fileURLToPath(
-            new URL('./theme/components/module/Empty.vue', import.meta.url),
+            new URL('./theme/components/module/view/Nav.vue', import.meta.url),
           ),
         },
         {
-          find: /^.*\/VPNav\.vue$/,
+          find: /^.*\/VPFooter\.vue$/,
           replacement: fileURLToPath(
             new URL('./theme/components/module/Empty.vue', import.meta.url),
           ),

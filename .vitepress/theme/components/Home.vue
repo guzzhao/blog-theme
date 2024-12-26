@@ -3,8 +3,7 @@ import { useDateFormat } from "@vueuse/core";
 import { useRouter } from "vitepress";
 import { data as postsAll } from "../posts.data";
 import BackToTop from "./module/btn/BackToTop.vue";
-import Nav from "./module/view/Nav.vue";
-import Footer from "./module/view/Footer.vue";
+
 
 
 const tags = postsAll.map((e) => e.tag);
@@ -53,8 +52,7 @@ function changeHidden(t) {
 <template>
 
   <div class="container flex flex-col justify-center mx-auto max-w-200  h-full mt-10">
-    <Nav />
-    <main class="flex-grow" >
+    <main class="flex-grow">
       <template v-for="{ title, url, date, tag, description, year } of posts" :key="url">
         <div class="list-disc pl-5 space-y-2">
           <div v-if="Object.values(yearUrls).includes(url)"
@@ -73,7 +71,6 @@ function changeHidden(t) {
 
       </template>
     </main>
-    <Footer />
   </div>
 
 
