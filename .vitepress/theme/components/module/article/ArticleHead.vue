@@ -8,11 +8,14 @@ const { frontmatter } = useData()
 const location = useBrowserLocation()
 const { copy, isSupported } = useClipboard()
 
+let copyStatus = ref("Copy")
+
 function handleCopy() {
   if (!isSupported) {
     return
   }
   copy(location.value.href)
+  copyStatus.value = "Copied"
 }
 </script>
 
@@ -24,13 +27,16 @@ function handleCopy() {
 
     <div class="flex">
       <DateShow id="date" :date="frontmatter.date" />
-      <PhCopyDuotone class=" cursor-pointer " @click="handleCopy" />
+      <div class="tooltip pl-1" :data-tip="copyStatus">
+        <PhCopyDuotone class=" cursor-pointer " @click="handleCopy" />
+      </div>
+
     </div>
   </div>
 </template>
 
 <style scoped>
-#date{
+#date {
   font: 2em;
   /* align-self: flex-end; */
 }

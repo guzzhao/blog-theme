@@ -7,12 +7,10 @@ import Icons from 'unplugin-icons/vite'
 import Components from 'unplugin-vue-components/vite'
 import { RssPlugin } from 'vitepress-plugin-rss'
 import tailwindcss from '@tailwindcss/vite'
-
-const logo = '/logo.svg'
+import { logo, author, RSS, baseConfig } from './my_config'
 
 export default defineConfig({
-  lang: 'zh-CN',
-  title: '无名小卒',
+  ...baseConfig,
   footer: '',
   cleanUrls: true,
   markdown: {
@@ -36,7 +34,7 @@ export default defineConfig({
       'meta',
       {
         name: 'author',
-        content: 'gu',
+        content: author,
       },
     ],
     [
@@ -103,11 +101,7 @@ export default defineConfig({
       Icons({
         compiler: 'vue3',
       }),
-      [RssPlugin({
-        title: 'guzzhao',
-        baseUrl: 'https://blog-demo.guzha0.com',
-        copyright: 'Copyright (c) 2018-present, guzzhao',
-      })],
+      [RssPlugin(RSS)],
     ],
   }
 })

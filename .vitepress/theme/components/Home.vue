@@ -54,21 +54,18 @@ function changeHidden(t) {
   <div class="container flex flex-col justify-center mx-auto max-w-200  h-full mt-10">
     <main class="flex-grow">
       <template v-for="{ title, url, date, tag, description, year } of posts" :key="url">
-        <div class="list-disc pl-5 space-y-2">
-          <div v-if="Object.values(yearUrls).includes(url)"
-            class="select-none text-2xl font-bold z-0  pointer-events-none italic">
+          <span v-if="Object.values(yearUrls).includes(url)"
+            class="select-none text-2xl font-bold z-0 h-min pointer-events-none italic mt-3">
             {{ year }}
-          </div>
+          </span>
           <div class="text-blue-600  flex items-end text-xl ">
             <div @click="routerPage(url)" class="cursor-pointer  hover:underline">
               {{ title }}
             </div>
-            <span class="text-gray-500 text-sm h-min cursor-default   ">
+            <span class="text-gray-500 text-sm h-min cursor-default pl-1">
               {{ tag }} {{ useDateFormat(date.time, 'MM-DD').value }}
             </span>
           </div>
-        </div>
-
       </template>
     </main>
   </div>

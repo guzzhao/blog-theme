@@ -9,7 +9,7 @@ const routerPage = () => router.go('/info');
 </script>
 
 <template>
-  <div id="main" @click="routerPage">
+  <div id="main" @click="routerPage" class="cursor-pointer">
     <CibAboutMe />
 
   </div>

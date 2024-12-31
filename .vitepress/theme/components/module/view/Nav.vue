@@ -20,11 +20,11 @@ const routerPage = () => router.go('/');
 
 <template>
 
-  <nav class="navbar backdrop-blur-sm z-1000 mb-5">
-    <div class="flex-1 ml-5 ">
+  <nav class="navbar backdrop-blur-sm z-1000 mb-5  p-5">
+    <div class="flex-1">
       <a class="text-5xl font-bold cursor-pointer " @click="routerPage" >{{ site.title }}</a>
     </div>
-    <div class="flex-none flex">
+    <div class="flex-none flex select-none">
       <Info class="mr-5"/>
       <SwitchDark />
     </div>
