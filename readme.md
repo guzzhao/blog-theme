@@ -4,8 +4,8 @@
 
 
 
-`bun install`
+`pnpm install`
 
-`bun update --latest`
+`pnpm update --latest`
 
 
