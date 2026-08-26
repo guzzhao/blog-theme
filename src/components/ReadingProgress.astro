@@ -1,0 +1,38 @@
+<div
+  id="reading-progress"
+  class="fixed top-0 left-0 z-60 h-0.5 w-full origin-left scale-x-0 bg-theme"
+  aria-hidden="true"
+></div>
+
+<script>
+  function initProgress() {
+    const bar = document.getElementById('reading-progress')
+    if (!bar) return
+
+    let ticking = false
+    const el = bar
+    if (!el) return
+    function update() {
+      ticking = false
+      const doc = document.documentElement
+      const max = doc.scrollHeight - doc.clientHeight
+      const ratio = max > 0 ? Math.min(doc.scrollTop / max, 1) : 0
+      el.style.transform = `scaleX(${ratio})`
+    }
+
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (!ticking) {
+          ticking = true
+          requestAnimationFrame(update)
+        }
+      },
+      { passive: true },
+    )
+    update()
+  }
+
+  initProgress()
+  document.addEventListener('astro:page-load', initProgress)
+</script>

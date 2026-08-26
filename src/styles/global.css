@@ -5,25 +5,55 @@
 
 :root {
   --bg: #fcfcfc;
-  --fg: #334155;
-  --muted: #64748b;
+  --bg-soft: #f1f3f5;
+  --fg: #1f2937;
+  --muted: #6b7280;
   --theme-color: #00629f;
+  --border: rgb(0 0 0 / 0.08);
 }
 
 .dark {
-  --bg: #1d2025;
-  --fg: #d4d4cf;
-  --muted: #94a3b8;
+  --bg: #17181c;
+  --bg-soft: #22242a;
+  --fg: #d6d3cd;
+  --muted: #8a919e;
+  --theme-color: #4da3da;
+  --border: rgb(255 255 255 / 0.1);
 }
 
 @theme inline {
   --color-bg: var(--bg);
+  --color-bg-soft: var(--bg-soft);
   --color-fg: var(--fg);
   --color-muted: var(--muted);
   --color-theme: var(--theme-color);
+  --color-border-soft: var(--border);
+
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', 'Segoe UI', sans-serif;
+  --font-serif:
+    Georgia, 'Times New Roman', 'Songti SC', SimSun, serif;
 }
 
 html {
   background-color: var(--bg);
   color: var(--fg);
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--theme-color) 25%, transparent);
+}
+
+@media (min-width: 1024px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: color-mix(in srgb, var(--muted) 40%, transparent);
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
 }

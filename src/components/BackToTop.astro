@@ -2,7 +2,7 @@
   id="back-to-top"
   type="button"
   aria-label="返回顶部"
-  class="fixed right-5 bottom-25 z-50 hidden cursor-pointer text-3xl opacity-0 transition-opacity duration-300 select-none"
+  class="fixed right-5 bottom-25 z-50 cursor-pointer text-3xl opacity-0 transition-all duration-300 ease-out select-none"
 >
   🐾
 </button>
@@ -13,12 +13,13 @@
   function update() {
     if (!btn) return
     const show = window.scrollY > 300
-    btn.classList.toggle('hidden', false)
     btn.style.opacity = show ? '1' : '0'
+    btn.style.transform = show ? 'translateY(0)' : 'translateY(10px)'
     btn.style.pointerEvents = show ? 'auto' : 'none'
   }
 
   window.addEventListener('scroll', update, { passive: true })
+  window.addEventListener('resize', update, { passive: true })
   update()
 </script>
 

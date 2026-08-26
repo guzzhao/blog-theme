@@ -22,20 +22,32 @@ function formatMonthDay(date: Date): string {
 ---
 
 <BaseLayout>
-  <div class="mt-10 flex flex-col">
+  <div class="mt-12 flex flex-col">
     {
       [...byYear.entries()].map(([year, yearPosts]) => (
-        <section class="mb-6">
-          <h2 class="mt-4 text-2xl font-bold italic select-none">{year}</h2>
+        <section class="mb-8">
+          <h2 class="mt-4 mb-2 flex items-center gap-3 font-serif text-xl font-bold text-muted italic select-none">
+            {year}
+            <span class="h-px flex-1 bg-border-soft" />
+          </h2>
           <ul>
             {yearPosts.map((post) => (
-              <li class="flex items-end text-xl text-theme">
-                <a href={`/posts/${post.id}/`} class="hover:underline">
-                  {post.data.title}
+              <li>
+                <a
+                  href={`/posts/${post.id}/`}
+                  class="group -mx-3 flex items-baseline justify-between gap-4 rounded-md px-3 py-1.5 transition-colors duration-200 hover:bg-bg-soft"
+                >
+                  <span class="text-lg text-theme underline-offset-4 group-hover:underline">
+                    <span
+                      class="mr-0 inline-block w-0 overflow-hidden opacity-0 transition-all duration-200 group-hover:mr-1.5 group-hover:w-3 select-none"
+                      aria-hidden="true"
+                    >→</span>
+                    {post.data.title}
+                  </span>
+                  <time class="shrink-0 font-mono text-sm text-muted tabular-nums">
+                    {formatMonthDay(post.data.date)}
+                  </time>
                 </a>
-                <span class="pl-1 text-sm text-muted">
-                  {formatMonthDay(post.data.date)}
-                </span>
               </li>
             ))}
           </ul>

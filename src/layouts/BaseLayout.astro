@@ -10,6 +10,7 @@ interface Props {
 
 const { title } = Astro.props
 const pageTitle = title ? `${title} · ${SITE_TITLE}` : SITE_TITLE
+const year = new Date().getFullYear()
 ---
 
 <!doctype html>
@@ -29,11 +30,14 @@ const pageTitle = title ? `${title} · ${SITE_TITLE}` : SITE_TITLE
       document.documentElement.classList.toggle('dark', theme === 'dark')
     </script>
   </head>
-  <body class="bg-bg text-fg min-h-screen">
+  <body class="flex min-h-screen flex-col bg-bg font-sans text-fg antialiased">
     <Nav />
-    <main class="mx-auto w-full max-w-3xl px-6">
+    <main class="mx-auto w-full max-w-3xl grow px-6">
       <slot />
     </main>
+    <footer class="mt-16 border-t border-border-soft py-8 text-center text-sm text-muted select-none">
+      © {year} {SITE_TITLE}
+    </footer>
     <BackToTop />
   </body>
 </html>

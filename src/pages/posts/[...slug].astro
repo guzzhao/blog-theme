@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content'
 import BaseLayout from '../../layouts/BaseLayout.astro'
+import ReadingProgress from '../../components/ReadingProgress.astro'
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts')
@@ -22,16 +23,23 @@ function formatDate(date: Date): string {
 ---
 
 <BaseLayout title={post.data.title}>
-  <article class="mt-8">
-    <header class="mb-6 flex flex-col items-center">
-      <h1 class="mb-4 text-4xl font-bold break-all">{post.data.title}</h1>
-      <time class="text-sm text-muted">{formatDate(post.data.date)}</time>
+  <ReadingProgress />
+  <article class="mt-10">
+    <header class="mb-8 flex flex-col items-center">
+      <h1 class="mb-3 font-serif text-4xl leading-tight font-bold break-all">
+        {post.data.title}
+      </h1>
+      <time class="font-mono text-sm text-muted tabular-nums">{formatDate(post.data.date)}</time>
+      <span class="mt-4 h-1 w-12 rounded-full bg-theme opacity-70" aria-hidden="true"></span>
     </header>
-    <div class="prose-body leading-relaxed [&_pre]:rounded-md [&_pre]:p-4">
+    <div class="prose-body text-[15px] leading-relaxed">
       <Content />
     </div>
     <footer class="my-16 text-center">
-      <a href="/" class="text-theme hover:underline">← 返回列表</a>
+      <a
+        href="/"
+        class="inline-block rounded-full border border-border-soft px-4 py-1.5 text-theme transition-colors duration-200 hover:bg-bg-soft"
+      >← 返回列表</a>
     </footer>
   </article>
 </BaseLayout>
@@ -41,7 +49,7 @@ function formatDate(date: Date): string {
   @reference "../../styles/global.css";
 
   .prose-body h2 {
-    @apply mt-8 mb-3 text-2xl font-bold;
+    @apply mt-10 mb-3 border-l-4 border-theme pl-3 text-2xl font-bold;
   }
   .prose-body h3 {
     @apply mt-6 mb-2 text-xl font-bold;
@@ -50,31 +58,37 @@ function formatDate(date: Date): string {
     @apply my-4;
   }
   .prose-body a {
-    @apply text-theme underline;
+    @apply text-theme underline decoration-theme/40 underline-offset-4 transition-colors duration-200 hover:decoration-theme;
   }
   .prose-body ul {
-    @apply my-4 list-disc pl-6;
+    @apply my-4 list-disc pl-6 marker:text-theme/60;
   }
   .prose-body ol {
-    @apply my-4 list-decimal pl-6;
+    @apply my-4 list-decimal pl-6 marker:text-muted;
   }
   .prose-body blockquote {
-    @apply my-4 border-l-4 border-black/20 pl-4 opacity-80 dark:border-white/20;
+    @apply my-4 rounded-r-md border-l-4 border-theme/50 bg-bg-soft py-1 pr-4 pl-4 text-muted italic;
   }
   .prose-body code:not(pre code) {
-    @apply rounded bg-black/5 px-1.5 py-0.5 dark:bg-white/10;
+    @apply rounded bg-bg-soft px-1.5 py-0.5 font-mono text-[0.85em];
+  }
+  .prose-body pre {
+    @apply my-5 rounded-lg p-4 text-sm shadow-sm;
   }
   .prose-body table {
-    @apply my-4 w-full border-collapse;
+    @apply my-5 w-full border-collapse overflow-hidden rounded-lg text-sm;
   }
   .prose-body th,
   .prose-body td {
-    @apply border border-black/15 px-3 py-1.5 dark:border-white/20;
+    @apply border border-border-soft px-3 py-1.5;
+  }
+  .prose-body th {
+    @apply bg-bg-soft font-semibold;
   }
   .prose-body img {
-    @apply my-4 max-w-full;
+    @apply my-5 max-w-full rounded-lg;
   }
   .prose-body hr {
-    @apply my-8 border-black/10 dark:border-white/15;
+    @apply my-10 border-border-soft;
   }
 </style>
