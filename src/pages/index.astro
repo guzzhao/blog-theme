@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content'
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const posts = (await getCollection('posts', ({ data }) => data.public)).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+)
+
+// 按年份分组（保持年内倒序）
+const byYear = new Map<number, typeof posts>()
+for (const post of posts) {
+  const year = post.data.date.getFullYear()
+  if (!byYear.has(year)) byYear.set(year, [])
+  byYear.get(year)!.push(post)
+}
+
+function formatMonthDay(date: Date): string {
+  const mm = String(date.getMonth() + 1).padStart(2, '0')
+  const dd = String(date.getDate()).padStart(2, '0')
+  return `${mm}-${dd}`
+}
+---
+
+<BaseLayout>
+  <div class="mt-10 flex flex-col">
+    {
+      [...byYear.entries()].map(([year, yearPosts]) => (
+        <section class="mb-6">
+          <h2 class="mt-4 text-2xl font-bold italic select-none">{year}</h2>
+          <ul>
+            {yearPosts.map((post) => (
+              <li class="flex items-end text-xl text-theme">
+                <a href={`/posts/${post.id}/`} class="hover:underline">
+                  {post.data.title}
+                </a>
+                <span class="pl-1 text-sm text-muted">
+                  {formatMonthDay(post.data.date)}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
+  </div>
+</BaseLayout>

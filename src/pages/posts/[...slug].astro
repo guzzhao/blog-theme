@@ -1,0 +1,80 @@
+---
+import { getCollection, render } from 'astro:content'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts')
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }))
+}
+
+const { post } = Astro.props
+const { Content } = await render(post)
+
+function formatDate(date: Date): string {
+  const y = date.getFullYear()
+  const m = String(date.getMonth() + 1).padStart(2, '0')
+  const d = String(date.getDate()).padStart(2, '0')
+  return `${y}年${m}月${d}日`
+}
+---
+
+<BaseLayout title={post.data.title}>
+  <article class="mt-8">
+    <header class="mb-6 flex flex-col items-center">
+      <h1 class="mb-4 text-4xl font-bold break-all">{post.data.title}</h1>
+      <time class="text-sm text-muted">{formatDate(post.data.date)}</time>
+    </header>
+    <div class="prose-body leading-relaxed [&_pre]:rounded-md [&_pre]:p-4">
+      <Content />
+    </div>
+    <footer class="my-16 text-center">
+      <a href="/" class="text-theme hover:underline">← 返回列表</a>
+    </footer>
+  </article>
+</BaseLayout>
+
+<style is:global>
+  /* 文章排版基础样式（无 prose 插件的轻量替代） */
+  @reference "../../styles/global.css";
+
+  .prose-body h2 {
+    @apply mt-8 mb-3 text-2xl font-bold;
+  }
+  .prose-body h3 {
+    @apply mt-6 mb-2 text-xl font-bold;
+  }
+  .prose-body p {
+    @apply my-4;
+  }
+  .prose-body a {
+    @apply text-theme underline;
+  }
+  .prose-body ul {
+    @apply my-4 list-disc pl-6;
+  }
+  .prose-body ol {
+    @apply my-4 list-decimal pl-6;
+  }
+  .prose-body blockquote {
+    @apply my-4 border-l-4 border-black/20 pl-4 opacity-80 dark:border-white/20;
+  }
+  .prose-body code:not(pre code) {
+    @apply rounded bg-black/5 px-1.5 py-0.5 dark:bg-white/10;
+  }
+  .prose-body table {
+    @apply my-4 w-full border-collapse;
+  }
+  .prose-body th,
+  .prose-body td {
+    @apply border border-black/15 px-3 py-1.5 dark:border-white/20;
+  }
+  .prose-body img {
+    @apply my-4 max-w-full;
+  }
+  .prose-body hr {
+    @apply my-8 border-black/10 dark:border-white/15;
+  }
+</style>

@@ -1,0 +1,29 @@
+@import 'tailwindcss';
+
+/* class 策略的 dark 变体（<html class="dark">） */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #fcfcfc;
+  --fg: #334155;
+  --muted: #64748b;
+  --theme-color: #00629f;
+}
+
+.dark {
+  --bg: #1d2025;
+  --fg: #d4d4cf;
+  --muted: #94a3b8;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-theme: var(--theme-color);
+}
+
+html {
+  background-color: var(--bg);
+  color: var(--fg);
+}

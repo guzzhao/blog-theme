@@ -1,0 +1,39 @@
+---
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
+import Nav from '../components/Nav.astro'
+import BackToTop from '../components/BackToTop.astro'
+import '../styles/global.css'
+
+interface Props {
+  title?: string
+}
+
+const { title } = Astro.props
+const pageTitle = title ? `${title} · ${SITE_TITLE}` : SITE_TITLE
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={SITE_DESCRIPTION} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <title>{pageTitle}</title>
+    <!-- 主题初始化：同步执行，避免暗色闪烁 -->
+    <script is:inline>
+      const theme =
+        localStorage.getItem('theme') ??
+        (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+      document.documentElement.classList.toggle('dark', theme === 'dark')
+    </script>
+  </head>
+  <body class="bg-bg text-fg min-h-screen">
+    <Nav />
+    <main class="mx-auto w-full max-w-3xl px-6">
+      <slot />
+    </main>
+    <BackToTop />
+  </body>
+</html>
