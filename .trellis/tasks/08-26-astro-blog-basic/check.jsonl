@@ -1,0 +1,2 @@
+{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "检查阶段的质量标准"}
+{"file": ".trellis/spec/frontend/type-safety.md", "reason": "content schema 与组件 props 类型安全检查依据"}
