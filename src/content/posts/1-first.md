@@ -12,7 +12,7 @@ public: true
 
 ## url
 
-[back1](./next1) <!-- 内联 -->
+[back1](../next1) <!-- 内联 -->
 
 [baidu](https://www.baidu.com)
 

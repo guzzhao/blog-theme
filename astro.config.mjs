@@ -6,6 +6,7 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   site: 'https://guzzhao.github.io',
   base: '/blog-theme',
+  trailingSlash: 'always',
   markdown: {
     syntaxHighlight: 'shiki',
     shikiConfig: {
