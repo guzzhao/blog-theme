@@ -1,6 +1,7 @@
----
+﻿---
 import { getCollection } from 'astro:content'
 import BaseLayout from '../layouts/BaseLayout.astro'
+import { BASE } from '../consts'
 
 const posts = (await getCollection('posts', ({ data }) => data.public)).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime(),
@@ -34,7 +35,7 @@ function formatMonthDay(date: Date): string {
             {yearPosts.map((post) => (
               <li>
                 <a
-                  href={`/posts/${post.id}/`}
+                  href={`${BASE}/posts/${post.id}/`}
                   class="group -mx-3 flex items-baseline justify-between gap-4 rounded-md px-3 py-1.5 transition-colors duration-200 hover:bg-bg-soft"
                 >
                   <span class="text-lg text-theme underline-offset-4 group-hover:underline">

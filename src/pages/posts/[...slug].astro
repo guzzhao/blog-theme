@@ -1,6 +1,7 @@
----
+﻿---
 import { getCollection, render } from 'astro:content'
 import BaseLayout from '../../layouts/BaseLayout.astro'
+import { BASE } from '../../consts'
 import ReadingProgress from '../../components/ReadingProgress.astro'
 
 export async function getStaticPaths() {
@@ -37,7 +38,7 @@ function formatDate(date: Date): string {
     </div>
     <footer class="my-16 text-center">
       <a
-        href="/"
+        href={`${BASE}/`}
         class="inline-block rounded-full border border-border-soft px-4 py-1.5 text-theme transition-colors duration-200 hover:bg-bg-soft"
       >← 返回列表</a>
     </footer>

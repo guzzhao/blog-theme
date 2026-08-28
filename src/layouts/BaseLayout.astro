@@ -1,5 +1,5 @@
----
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
+﻿---
+import { SITE_TITLE, SITE_DESCRIPTION, BASE } from '../consts'
 import Nav from '../components/Nav.astro'
 import BackToTop from '../components/BackToTop.astro'
 import '../styles/global.css'
@@ -20,7 +20,7 @@ const year = new Date().getFullYear()
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={SITE_DESCRIPTION} />
     <meta name="generator" content={Astro.generator} />
-    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link rel="icon" type="image/svg+xml" href={`${BASE}/logo.svg`} />
     <title>{pageTitle}</title>
     <!-- 主题初始化：同步执行，避免暗色闪烁 -->
     <script is:inline>
